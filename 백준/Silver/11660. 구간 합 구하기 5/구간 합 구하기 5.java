@@ -47,7 +47,9 @@ public class Main {
             }
         }
 
-         for(int i=1+N; i<1+N+M; i++){
+        StringBuilder sb = new StringBuilder();
+
+        for(int i=1+N; i<1+N+M; i++){
             String[] row = args[i].split(" ");
             
             int x1 = Integer.parseInt(row[0]);
@@ -60,9 +62,13 @@ public class Main {
                     - map[x1-1][y2]
                     - map[x2][y1-1]
                     + map[x1-1][y1-1];
-            System.out.println(sum);
-            
-         }
+            // System.out.println(sum);
+            sb.append(sum);
+            if(i<N+M){
+                sb.append("\n");
+            }
+        }
+        System.out.println(sb.toString());
     }
     /**
      * 2중 for문돌면 x2-x1+1 * y2-y1+1 사이즈,
